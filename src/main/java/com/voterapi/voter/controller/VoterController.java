@@ -150,7 +150,7 @@ public class VoterController {
 
         // voterRepository.deleteAll();
         voterSeedDataService.setRandomVotesDb(election);
-        voterRepository.save(voterSeedDataService.getVotes());
+        voterRepository.saveAll(voterSeedDataService.getVotes());
         Map<String, String> result = new HashMap<>();
         result.put("message", "Simulation data created using eventual consistency!");
         return ResponseEntity.status(HttpStatus.OK).body(result);
@@ -161,6 +161,6 @@ public class VoterController {
 
         voterRepository.deleteAll();
         voterSeedDataService.votesFromMap(candidates, election);
-        voterRepository.save(voterSeedDataService.getVotes());
+        voterRepository.saveAll(voterSeedDataService.getVotes());
     }
 }

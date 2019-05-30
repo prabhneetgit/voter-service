@@ -28,22 +28,22 @@ public class HostInfoContributor implements InfoContributor {
 
     @Override
     public void contribute(Info.Builder builder) {
-        InetAddress ip = InetAddress.getLoopbackAddress();
-        Map<String, String> hostMap = new HashMap<>();
-
-        try {
-            ip = InetAddress.getLocalHost();
-        } catch (UnknownHostException e) {
-            logger.error(String.valueOf(e.getStackTrace()));
-        }
-        hostMap.put("ipAddress", ip.getHostAddress());
-        hostMap.put("hostname", ip.getHostName());
-        builder.withDetail("appHostInfo", hostMap);
-
-        hostMap = new HashMap<>();
-        CommandResult commandResult = this.mongoTemplate.executeCommand("{ serverStatus: 1 }");
-        hostMap.put("hostname", commandResult.getString("host"));
-        builder.withDetail("mongoDbHostInfo", hostMap);
+//        InetAddress ip = InetAddress.getLoopbackAddress();
+//        Map<String, String> hostMap = new HashMap<>();
+//
+//        try {
+//            ip = InetAddress.getLocalHost();
+//        } catch (UnknownHostException e) {
+//            logger.error(String.valueOf(e.getStackTrace()));
+//        }
+//        hostMap.put("ipAddress", ip.getHostAddress());
+//        hostMap.put("hostname", ip.getHostName());
+//        builder.withDetail("appHostInfo", hostMap);
+//
+//        hostMap = new HashMap<>();
+//        CommandResult commandResult = this.mongoTemplate.executeCommand("{ serverStatus: 1 }");
+//        hostMap.put("hostname", commandResult.getString("host"));
+//        builder.withDetail("mongoDbHostInfo", hostMap);
     }
 
 }

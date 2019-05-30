@@ -21,7 +21,7 @@ spring:
     name: Voter Service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/voter
+      uri: mongodb+srv://mongo_1:mongo_123@voter-api-kube-demo-sjsar.gcp.mongodb.net/test?retryWrites=true&w=majority
   rabbitmq:
     host: localhost
 ---
