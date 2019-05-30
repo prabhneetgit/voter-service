@@ -10,5 +10,5 @@ RUN mkdir /voter \
   && git clone --depth 1 --branch build-artifacts-gke \
       "https://github.com/prabhneetgit/voter-service.git" /voter \
   && cd /voter \
-  && mv voter-service-*.jar voter-service.jar
+  && mv voter-*.jar voter-service.jar
 CMD [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "voter/voter-service.jar" ]
