@@ -32,7 +32,7 @@ docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
 set -ex
 
 sleep 120 # wait for automated Docker Hub build to finish...
-IMAGE="garystafford/${SERVICE_NAME}-service"
+IMAGE="prabhneetdocker/${SERVICE_NAME}-service"
 IMAGE_TAG="${BRANCH}-0.6.${TRAVIS_BUILD_NUMBER}"
 docker build -t ${IMAGE}:${IMAGE_TAG} .
 docker push ${IMAGE}:${IMAGE_TAG}
